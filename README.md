@@ -4,25 +4,15 @@ Sarah Young and Arissa Wongpanich
 
 
 ## Overview
+Students are often presented with a huge amount of resources to use, but don't have the time to finish everything. _TITLE_ is a decentralized web app where users can vote on the quality of lecture material, from videos to notes to any other resources to allow such students to select the best material to look through. 
 
-
-
-## Requirements for Project
-
-
-### Expectations
-
-The expectation for this project is the same as would be for a very strong hackathon project (under the time limit of 48 hours). Feel free to do a hackathon with your friends if needed! Since you are now trained in the art of DApp development we expect you to be able to pull that off in a little over two weeks with your team. We don't expect you to make something mindblowing within this short timeframe, but we want you to show off the best you can do! If you do well enough, we're more than happy to connect you with companies looking to hire interns.
 
 ## Functionality
 
-## Smart Contracts
+We will have 2 smart contracts. The UploadLecture contract handles users uploading webcasts and notes to the app, and the Vote smart contract is for users voting on the quality of lecture material.
 
-We will be having 2 smart contracts. 
 
 ## Frontend
-
-## Backend???
 
 ### Ideation and Architecture
 
