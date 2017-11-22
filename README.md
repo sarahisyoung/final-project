@@ -1,11 +1,11 @@
-# Check Me In
+# Title
 
 Sarah Young and Arissa Wongpanich
 
 
 ## Overview
 
-CheckMeIn is a decentralized attendance check-in platform where students' attendance at lectures is verified by their peers. Unlike Google forms or other automated attendance taking applications, CheckMeIn relies on other students to verify that a neighboring student is present at the lecture.
+
 
 ## Requirements for Project
 
