@@ -17,8 +17,9 @@ The Vote smart contract is for users voting on the quality of lecture material, 
 
 ![alt text](diagram.png)
 
+# Additional components
 ## Frontend
-To design this user interface for this DApp, we plan to use the JavaScript framework _framework_.
+To design this user interface for this DApp, we plan to use the JavaScript framework React.
 
 # OR
 
