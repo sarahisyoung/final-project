@@ -4,8 +4,9 @@ Sarah Young and Arissa Wongpanich
 
 
 ## Overview
-Students are often presented with a huge amount of resources to use, but don't have the time to finish everything. _TITLE_ is a decentralized web app where users can vote on the quality of lecture material, from videos to notes to any other resources to allow such students to select the best material to look through. 
+_TITLE_ is a decentralized web app where students can upload their own webcasts, notes, and other lecture materials to share with their peers. Students also vote on the quality of the lecture materials uploaded to allow other students to select the best material to look through. If an upload reaches a certain number of votes, the user who uploaded it will get a payout in ETH.
 
+This is helpful for students who are taking classes that aren't webcast and want to rewatch lectures in order to study for midterms, or who happen to be absent and want to catch up on the material. Rewarding high-quality content with ETH provides an incentive for democratizing lecture materials!
 
 ## Functionality
 
