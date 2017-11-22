@@ -1,4 +1,4 @@
-# CheckMeIn
+# Check Me In
 
 Sarah Young and Arissa Wongpanich
 
