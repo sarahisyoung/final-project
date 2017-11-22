@@ -15,6 +15,8 @@ The UploadLecture contract handles users uploading webcasts and notes to the app
 
 The Vote smart contract is for users voting on the quality of lecture material, and keeping track of which materials have been upvoted the most.
 
+![alt text](diagram.png)
+
 ## Frontend
 To design this user interface for this DApp, we plan to use the JavaScript framework _framework_.
 
