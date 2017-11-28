@@ -1,0 +1,13 @@
+{
+  "contract_name": "LectureMaterials",
+  "abi": [
+    {
+      "payable": true,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603980601c6000396000f30060606040525b5b600080fd5b0000a165627a7a7230582034c2d15236058e3aeb89b612780c2f0a7b10951b6027ccb23f8a64b87827d5980029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1511850600659
+}

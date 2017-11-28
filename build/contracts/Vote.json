@@ -1,0 +1,13 @@
+{
+  "contract_name": "Vote",
+  "abi": [
+    {
+      "payable": true,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603980601c6000396000f30060606040525b5b600080fd5b0000a165627a7a72305820b2e787324d5403febc10378ea03ddfa5e2c4e4d5d11cced19b11a40e2e0c42270029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1511851146162
+}

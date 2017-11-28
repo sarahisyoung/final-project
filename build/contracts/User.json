@@ -1,0 +1,13 @@
+{
+  "contract_name": "User",
+  "abi": [
+    {
+      "payable": true,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b603980601c6000396000f30060606040525b5b600080fd5b0000a165627a7a723058207be8fd2357cd55f82ddaf8f41b2d15835d365d66f5a8fee29f316a1672a159540029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1511850600659
+}
