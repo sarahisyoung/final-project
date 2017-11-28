@@ -9,26 +9,23 @@ contract('uploadLectureTest', function(accounts) {
 	 * ones
 	 */
 	const args = {};
-	let x, y, z;
-	// YOUR CODE HERE
+	let uploadLecture;
 
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
-		// YOUR CODE HERE
+		uploadLecture = await UploadLecture.new(10);
 	});
 
 	/* Group test cases together 
 	 * Make sure to provide descriptive strings for method arguements and
 	 * assert statements
 	 */
-	describe('Your string here', function() {
-		it("your string here", async function() {
-			// YOUR CODE HERE
+	describe('Upload lecture tests.', function() {
+		it("instantiate an UploadLecture object.", async function() {
 		});
-		// YOUR CODE HERE
+		it("Upload a lecture.", async function() {
+		});
 	});
 
-	describe('Your string here', function() {
-		// YOUR CODE HERE
-	});
+
 });

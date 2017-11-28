@@ -9,26 +9,22 @@ contract('voteTest', function(accounts) {
 	 * ones
 	 */
 	const args = {};
-	let x, y, z;
-	// YOUR CODE HERE
 
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
-		// YOUR CODE HERE
 	});
 
 	/* Group test cases together 
 	 * Make sure to provide descriptive strings for method arguements and
 	 * assert statements
 	 */
-	describe('Your string here', function() {
-		it("your string here", async function() {
-			// YOUR CODE HERE
+	describe('Vote tests', function() {
+		it("Instantiate a new vote.", async function() {
 		});
-		// YOUR CODE HERE
+
+		it("Cast a vote for a lecture.", async function() {
+		});
 	});
 
-	describe('Your string here', function() {
-		// YOUR CODE HERE
-	});
+
 });
