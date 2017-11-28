@@ -24,7 +24,6 @@ contract Vote {
 	// returns the top n lectures, sorted by votes.
 	function getTopNLectures(uint n) {
 		//still need to somehow sort by votes...
-	}
 
 
 	/* Fallback function */
