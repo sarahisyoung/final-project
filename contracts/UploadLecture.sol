@@ -4,10 +4,10 @@ pragma solidity ^0.4.15;
 contract UploadLecture {
 
 	// mapping from sender's address to list of lecture material urls
-	mapping(address => string[]) userToLectures;
-	address[] users; // list of users who have uploaded lectures
-	string[] lectures; // list of lectures. could change this to a hash set
-	mapping(string => uint) lectureToVotes;
+	public mapping(address => string[]) userToLectures;
+	public address[] users; // list of users who have uploaded lectures
+	public string[] lectures; // list of lectures. could change this to a hash set
+	public mapping(string => uint) lectureToVotes;
 	uint requiredVotes; // required number of votes for payout
 
 	function UploadLecture(uint threshold) {
@@ -41,7 +41,16 @@ contract UploadLecture {
 	function payout(string lectureUrl) {
 		if (lectureExists(lectureUrl)) {
 			if (lectureToVotes[lectureUrl] >= requiredVotes) {
-				return true;
+
+				// check if lecture was uploaded by user.
+				wasUploadedByUser = false;
+				lecturesUploadedByUser = userToLectures[msg.sender];
+				for (uint i = 0; i < lecturesUploadedByUser.length; i++) {
+					if (sha3(lectures[i]) == sha3(lectureUrl)) {
+						wasUploadedByUser = true;
+					}
+				}
+				return wasUploadedByUser;
 			}
 		}
 		return false;
