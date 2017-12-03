@@ -1,15 +1,15 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.18;
 
 /** @title Vote */
 contract Vote {
 	address[] public uploaders;
-	mapping(String => uint256) public votes;
-	String[] public lectureList;
+	mapping (bytes32 => uint8) public votes;
+	bytes32[] public lectureList;
 
 	modifier OtherUsersOnly() {
-		bool valid = True;
+		bool valid = true;
 		for (uint i = 0; i < uploaders.length; i++) {
-			if (msg.sender.equals(uploaders[i])) {
+			if (msg.sender == uploaders[i]) {
 				valid = false;
 			}
 		}
@@ -17,23 +17,24 @@ contract Vote {
 	    _;
 	}
 
-	function Voting(String[] _lectureList) public {
-		//does this work???
+	function Voting(bytes32[] _lectureList) public {
+		
     	lectureList = _lectureList;
   	}	
+
 	// votes for a lecture. a user can't vote for their own lecture.
-	function voteForLecture(string lectureUrl) OtherUsersOnly {
+	function voteForLecture(bytes32 lecture) public {
 		require(validLecture(lecture));
-		votes[lectureUrl] += 1;
+		votes[lecture] += 1;
 	}
 
 	// returns the top n lectures, sorted by votes.
-	function getTopNLectures(uint n) {
+	function getTopNLectures(uint n) public {
 		//still need to somehow sort by votes...
 
 	}
-
-	function validLecture(String lecture) public returns (bool) {
+	// check the lecture to see if it's even valid
+	function validLecture(bytes32 lecture) view public returns (bool) {
     	for (uint i = 0; i < lectureList.length; i++) {
       		if (lectureList[i] == lecture) {
         		return true;
@@ -41,15 +42,16 @@ contract Vote {
     	}
     	return false;
   	}
-
-  	function totalVotes(String lecture) view public returns (uint256) {
+  	// total votes for a lecture
+  	function totalVotes(bytes32 lecture) view public returns (uint8) {
     	require(validLecture(lecture));
     	return votes[lecture];
   	}
 
 
-	/* Fallback function */
+
+	/* Fallback function
 	function() payable {
 		revert();
-	}
+	}*/
 }
