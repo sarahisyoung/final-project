@@ -1,19 +1,19 @@
 'use strict';
 
 /* Add the dependencies you're testing */
-const UploadLecture = artifacts.require("./UploadLecture.sol");
+const Uploader= artifacts.require("./Uploader.sol");
 // YOUR CODE HERE
 
-contract('uploadLectureTest', function(accounts) {
+contract('uploaderTest', function(accounts) {
 	/* Define your constant variables and instantiate constantly changing 
 	 * ones
 	 */
 	const args = {};
-	let uploadLecture;
+	let uploader;
 
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
-		uploadLecture = await UploadLecture.new(10);
+		uploader= await Uploader.new(10);
 	});
 
 	/* Group test cases together 
@@ -21,7 +21,7 @@ contract('uploadLectureTest', function(accounts) {
 	 * assert statements
 	 */
 	describe('Upload lecture tests.', function() {
-		it("instantiate an UploadLecture object.", async function() {
+		it("instantiate an Uploader object.", async function() {
 		});
 		it("Upload a lecture.", async function() {
 		});

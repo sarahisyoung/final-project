@@ -1,7 +1,8 @@
-var UploadLecture = artifacts.require("./UploadLecture.sol");
-var Vote = artifacts.require("./Vote.sol");
+var Voter = artifacts.require("./Voter.sol");
+var Uploader= artifacts.require("./Uploader.sol");
 
 module.exports = function(deployer) {
-	deployer.deploy(UploadLecture);
-	deployer.deploy(Vote);
+	deployer.deploy(Voter);
+	deployer.deploy(Uploader);
+
 };

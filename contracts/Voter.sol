@@ -7,11 +7,16 @@ contract Voter {
   address[] public uploaders;
   bytes32[] public lectureList;
 
-  //The constructor
-  function Voter(bytes32[] lectureNames) public {
-    lectureList = lectureNames;
-  }
+  // The constructor
+  // function Voter(bytes32[] lectureNames) public {
+  //   lectureList = lectureNames;
+  // }
 
+  //The constructor
+  function Voter() public {
+    // lecture 
+    // lectureList = lectureNames;
+  }
 
   // only non-owner users can vote for lecture
   modifier OtherUsersOnly() {
@@ -25,6 +30,17 @@ contract Voter {
       _;
   }
 
+  // returns if lecture exists or not
+  function lectureExists(bytes32 lecture) public returns (bool) {
+    bool exists = false;
+    for (uint i = 0; i < lectureList.length; i++) {
+      if (lectureList[i] == lecture) {
+        exists = true;
+      }
+    }
+    return exists;
+  }
+
   // Returns the total number of votes for 
   function totalVotesFor(bytes32 lecture) public returns (uint8) {
     require(validlecture(lecture));
@@ -36,6 +52,13 @@ contract Voter {
   function voteFor(bytes32 lecture) public {
     require(validlecture(lecture));
     votesReceived[lecture] += 1;
+  }
+
+  // adds a new lecture
+  function addNewLecture(bytes32 lecture) public {
+    lectureList.push(lecture);
+    votesReceived[lecture] = 0;
+    uploaders.push(msg.sender);
   }
 
   function validlecture(bytes32 lecture) public returns (bool) {
