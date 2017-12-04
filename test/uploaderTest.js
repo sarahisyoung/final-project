@@ -2,18 +2,21 @@
 
 /* Add the dependencies you're testing */
 const Uploader= artifacts.require("./Uploader.sol");
+const Voter= artifacts.require("./Voter.sol");
+
 // YOUR CODE HERE
 
 contract('uploaderTest', function(accounts) {
 	/* Define your constant variables and instantiate constantly changing 
 	 * ones
 	 */
-	const args = {};
-	let uploader;
+	const args = {lecture1: 'foo', lecture2: 'bar'};
+	let uploader, voter;
 
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
 		uploader= await Uploader.new(10);
+		voter = Voter.at(await uploader.voter());
 	});
 
 	/* Group test cases together 
@@ -22,8 +25,11 @@ contract('uploaderTest', function(accounts) {
 	 */
 	describe('Upload lecture tests.', function() {
 		it("instantiate an Uploader object.", async function() {
+			let size = await voter.getNumLectures.call();
+			assert.equal(0, size.valueOf(), "number of lectures should be 0 at initialization.");
 		});
 		it("Upload a lecture.", async function() {
+			
 		});
 	});
 

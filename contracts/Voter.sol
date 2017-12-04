@@ -3,20 +3,10 @@ pragma solidity ^0.4.15;
 
 contract Voter {
   
-  mapping (bytes32 => uint8) public votesReceived;
+  mapping (bytes32 => uint) public votesReceived;
   address[] public uploaders;
   bytes32[] public lectureList;
 
-  // The constructor
-  // function Voter(bytes32[] lectureNames) public {
-  //   lectureList = lectureNames;
-  // }
-
-  //The constructor
-  function Voter() public {
-    // lecture 
-    // lectureList = lectureNames;
-  }
 
   // only non-owner users can vote for lecture
   modifier OtherUsersOnly() {
@@ -30,6 +20,10 @@ contract Voter {
       _;
   }
 
+  function getNumLectures() public returns (uint) {
+    uint numLectures = lectureList.length;
+    return numLectures;
+  }
   // returns if lecture exists or not
   function lectureExists(bytes32 lecture) public returns (bool) {
     bool exists = false;
@@ -42,7 +36,7 @@ contract Voter {
   }
 
   // Returns the total number of votes for 
-  function totalVotesFor(bytes32 lecture) public returns (uint8) {
+  function totalVotesFor(bytes32 lecture) public returns (uint) {
     require(validlecture(lecture));
     return votesReceived[lecture];
   }

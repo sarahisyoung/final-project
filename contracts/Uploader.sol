@@ -5,14 +5,13 @@ import './Voter.sol';
 /** @title Uploader */
 contract Uploader{
 
-	uint8 requiredVotes; // required number of votes for payout
-	Voter voter;
+	uint requiredVotes; // required number of votes for payout
+	Voter public voter;
 
 
-	function Uploader(uint8 _requiredVotes) {
+	function Uploader(uint _requiredVotes) {
 		requiredVotes = _requiredVotes;
-		// bytes32[] lectureList;// = bytes32[];
-		// voter = new Voter(lectureList);
+
 		voter = new Voter();
 	}
 
