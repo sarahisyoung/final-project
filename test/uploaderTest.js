@@ -10,7 +10,7 @@ contract('uploaderTest', function(accounts) {
 	/* Define your constant variables and instantiate constantly changing 
 	 * ones
 	 */
-	const args = {lecture1: 'foo', lecture2: 'bar'};
+	const args = {lecture1: 'foo', lecture2: 'bar', user1: accounts[1], user2: accounts[2]};
 	let uploader, voter;
 
 	/* Do something before every `describe` method */
@@ -29,8 +29,11 @@ contract('uploaderTest', function(accounts) {
 			assert.equal(0, size.valueOf(), "number of lectures should be 0 at initialization.");
 		});
 		it("Upload a lecture.", async function() {
-
+			await uploader.upload(args.lecture1);
+			let size = await voter.getNumLectures.call();
+			assert.equal(1, size.valueOf(), "number of lectures is wrong after a lecture is added.");
 		});
+
 	});
 
 

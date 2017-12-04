@@ -5,7 +5,7 @@ solc = require('solc');
 compiledCode = solc.compile(code);
 abiDefinition = JSON.parse(compiledCode.contracts[':Voter'].interface);
 VotingContract = web3.eth.contract(abiDefinition);
-byteCode = compiledCode.contracts[':Voter'].bytecode
+byteCode = compiledCode.contracts[':Voter'].bytecode;
 deployedContract = VotingContract.new(['Rama','Nick','Jose'],{data: byteCode, from: web3.eth.accounts[0], gas: 4700000})
 contractInstance = VotingContract.at(deployedContract.address);
 deployedContract.address;

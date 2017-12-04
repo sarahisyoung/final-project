@@ -18,7 +18,7 @@ contract Uploader{
 	// this uploads a lecture to the app. returns true if successful, 
 	function upload(bytes32 lecture) returns (bool) {
 		if (!voter.lectureExists(lecture)) {
-			voter.voteFor(lecture);
+			voter.addNewLecture(lecture);
 			return true;
 		}
 		return false;

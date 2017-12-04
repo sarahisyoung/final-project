@@ -9,7 +9,7 @@ contract('voterTest', function(accounts) {
 	/* Define your constant variables and instantiate constantly changing 
 	 * ones
 	 */
-	const args = {lecture1: 'foo', lecture2: 'bar'};
+	const args = {lecture1: 'foo', lecture2: 'bar', user1: accounts[1], user2: accounts[2]};
 	let voter;
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
@@ -34,12 +34,13 @@ contract('voterTest', function(accounts) {
 		
 		});
 
-		// it("Check votes for a newly added lecture.", async function() {
-		// 	await voter.addNewLecture(args.lecture1);
-		// 	await voter.voteFor(args.lecture1);
-		// 	let numVotes = await voter.totalVotesFor(args.lecture1);//.valueOf();
-		// 	assert.equal(0, numVotes, "votes should be 0 for a newly added lecture.");
-		// });
+		it("Check votes for a newly added lecture.", async function() {
+			await voter.addNewLecture.call(args.lecture1);//, {from: args.user1});
+			// await voter.voteFor.call(args.lecture1, {from: args.user2});
+			// await voter.voteFor.call(args.lecture1);
+			// let numVotes = await voter.totalVotesFor(args.lecture1);//.valueOf();
+			// assert.equal(0, numVotes, "votes should be 0 for a newly added lecture.");
+		});
 
 	});
 

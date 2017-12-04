@@ -62,7 +62,7 @@ contract Voter {
   }
 
   function validlecture(bytes32 lecture) public returns (bool) {
-    for(uint i = 0; i < lectureList.length; i++) {
+    for(uint i = 0; i < numLectures; i++) {
       if (lectureList[i] == lecture) {
         return true;
       }
