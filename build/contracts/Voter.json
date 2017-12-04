@@ -1,0 +1,122 @@
+{
+  "contract_name": "Voter",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lecture",
+          "type": "bytes32"
+        }
+      ],
+      "name": "voteForLecture",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lecture",
+          "type": "bytes32"
+        }
+      ],
+      "name": "validlecture",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "votesReceived",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "uploaders",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lecture",
+          "type": "bytes32"
+        }
+      ],
+      "name": "votesFor",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "lectureList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "lectureNames",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b60405161039c38038061039c8339810160405280805190910190505b600281805161003e929160200190610046565b505b506100b5565b828054828255906000526020600020908101928215610083579160200282015b828111156100835782518255602090920191600190910190610066565b5b50610090929150610094565b5090565b6100b291905b80821115610090576000815560010161009a565b5090565b90565b6102d8806100c46000396000f300606060405236156100745763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041662da931081146100795780632da5d6ed146100915780637021939f146100bb5780638b25321a146100e7578063922133e314610126578063c05c9e4c14610152575b600080fd5b341561008457600080fd5b61008f60043561017a565b005b341561009c57600080fd5b6100a76004356101b4565b604051901515815260200160405180910390f35b34156100c657600080fd5b6100d1600435610206565b60405160ff909116815260200160405180910390f35b34156100f257600080fd5b6100fd60043561021b565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b341561013157600080fd5b6100d160043561025a565b60405160ff909116815260200160405180910390f35b341561015d57600080fd5b610168600435610289565b60405190815260200160405180910390f35b610183816101b4565b151561018e57600080fd5b6000818152602081905260409020805460ff8082166001011660ff199091161790555b50565b6000805b6002548110156101fb5760028054849190839081106101d357fe5b906000526020600020900160005b505414156101f25760019150610200565b5b6001016101b8565b600091505b50919050565b60006020819052908152604090205460ff1681565b600180548290811061022957fe5b906000526020600020900160005b915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000610265826101b4565b151561027057600080fd5b5060008181526020819052604090205460ff165b919050565b600280548290811061029757fe5b906000526020600020900160005b50549050815600a165627a7a72305820039f863cc72462b15d5aa1a9c15c8981acf14874f6a654b8eaf7c09e488134b20029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1512348944320
+}
