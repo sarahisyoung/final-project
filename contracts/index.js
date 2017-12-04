@@ -1,3 +1,5 @@
+//Template from https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2
+
 Web3 = require('web3');
 // solc = require('solc');
 
