@@ -11,8 +11,8 @@ contract Uploader{
 
 	function Uploader(uint _requiredVotes) {
 		requiredVotes = _requiredVotes;
-
-		voter = new Voter();
+		bytes32[] memory empty; 
+		voter = new Voter(empty);
 	}
 
 	// this uploads a lecture to the app. returns true if successful, 

@@ -15,7 +15,7 @@ contract('uploaderTest', function(accounts) {
 
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
-		uploader= await Uploader.new(10);
+		uploader= await Uploader.new();
 		voter = Voter.at(await uploader.voter());
 	});
 
@@ -29,7 +29,7 @@ contract('uploaderTest', function(accounts) {
 			assert.equal(0, size.valueOf(), "number of lectures should be 0 at initialization.");
 		});
 		it("Upload a lecture.", async function() {
-			
+
 		});
 	});
 

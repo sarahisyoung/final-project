@@ -14,7 +14,7 @@ VotingContract = web3.eth.contract(abi);
 
 // deployedContract = VotingContract.new({data: byteCode, from: web3.eth.accounts[0], gas: 4700000});
 // In your nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
-contractInstance = VotingContract.at('0xdb968ae53f89126494a62001996dafded1d38203');
+contractInstance = VotingContract.at('0xd84c677e0bedc81679b9d7b3b41fd05bc6d3ae3c');
 // contractInstance = VotingContract.at(deployedContract.address);
 lectures = {"Lecture 1": "lec-1", "Lecture 2": "lec-2", "Lecture 3": "lec-3"}
 

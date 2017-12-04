@@ -13,6 +13,7 @@ contract('voterTest', function(accounts) {
 	let voter;
 	/* Do something before every `describe` method */
 	beforeEach(async function() {
+
 		voter = await Voter.new();
 	});
 

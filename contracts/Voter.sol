@@ -6,6 +6,12 @@ contract Voter {
   mapping (bytes32 => uint) public votesReceived;
   address[] public uploaders;
   bytes32[] public lectureList;
+  uint numLectures;
+  //The constructor
+  function Voter(bytes32[] lectureNames) public {
+    lectureList = lectureNames;
+    numLectures = lectureList.length;
+  }
 
 
   // only non-owner users can vote for lecture
@@ -21,7 +27,6 @@ contract Voter {
   }
 
   function getNumLectures() public returns (uint) {
-    uint numLectures = lectureList.length;
     return numLectures;
   }
   // returns if lecture exists or not
@@ -53,6 +58,7 @@ contract Voter {
     lectureList.push(lecture);
     votesReceived[lecture] = 0;
     uploaders.push(msg.sender);
+    numLectures += 1;
   }
 
   function validlecture(bytes32 lecture) public returns (bool) {
