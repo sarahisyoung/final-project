@@ -26,21 +26,14 @@ contract Voter {
   }
 
   // Returns the total number of votes for 
-  function votesFor(bytes32 lecture) public returns (uint8) {
+  function totalVotesFor(bytes32 lecture) public returns (uint8) {
     require(validlecture(lecture));
     return votesReceived[lecture];
   }
 
-  // returns the top n lectures, sorted by votes.
-  function getTopNLectures(uint n) public {
-    //stillneed to somehow sort by votes...
-
-  }
-
-
   // This function increments the vote count for the specified lecture. This
   // is equivalent to casting a vote
-  function vote(bytes32 lecture) public {
+  function voteFor(bytes32 lecture) public {
     require(validlecture(lecture));
     votesReceived[lecture] += 1;
   }

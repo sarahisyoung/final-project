@@ -1,24 +1,27 @@
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-abi = JSON.parse('[{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"validCandidate","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"x","type":"bytes32"}],"name":"bytes32ToString","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"candidateList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"candidate","type":"bytes32"}],"name":"voteForCandidate","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"contractOwner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"candidateNames","type":"bytes32[]"}],"payable":false,"type":"constructor"}]')
+abi = JSON.parse(
+  '[{"constant":false,"inputs":[{"name":"lecture","type":"bytes32"}],"name":"validlecture","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"lecture","type":"bytes32"}],"name":"totalVotesFor","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"lecture","type":"bytes32"}],"name":"voteFor","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"name":"votesReceived","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"uploaders","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"lectureList","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"lectureNames","type":"bytes32[]"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]'
+  )
 
 VotingContract = web3.eth.contract(abi);
 // In your nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
-contractInstance = VotingContract.at('0x7945b56d80350db3baa12051eb50704f9f4fb601');
-candidates = {"Lecture 1": "candidate-1", "Lecture 2": "candidate-2", "Lecture 3": "candidate-3"}
+contractInstance = VotingContract.at('0x63a0c771b65141c71a86eb1ea223eaaa42672665');
 
-function voteForCandidate() {
-  candidateName = $("#candidate").val();
-  contractInstance.voteForCandidate(candidateName, {from: web3.eth.accounts[0]}, function() {
-    let div_id = candidates[candidateName];
-    $("#" + div_id).html(contractInstance.totalVotesFor.call(candidateName).toString());
+lectures = {"Lecture 1": "lec-1", "Lecture 2": "lec-2", "Lecture 3": "lec-3"}
+
+function voteFor() {
+  lectureTitle = $("#lec").val();
+  contractInstance.voteFor(lectureTitle, {from: web3.eth.accounts[0]}, function() {
+    let div_id = lectures[lectureTitle];
+    $("#" + div_id).html(contractInstance.totalVotesFor.call(lectureTitle).toString());
   });
 }
 
 $(document).ready(function() {
-  candidateNames = Object.keys(candidates);
-  for (var i = 0; i < candidateNames.length; i++) {
-    let name = candidateNames[i];
+  allLectures = Object.keys(lectures);
+  for (var i = 0; i < allLectures.length; i++) {
+    let name = allLectures[i];
     let val = contractInstance.totalVotesFor.call(name).toString()
-    $("#" + candidates[name]).html(val);
+    $("#" + lectures[name]).html(val);
   }
 });
